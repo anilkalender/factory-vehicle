@@ -16,11 +16,6 @@ public class CarController {
 
     private final CarService carService;
 
-    @GetMapping("/hello")
-    public ResponseEntity<?> hello(){
-        return new ResponseEntity<>( "hello", OK);
-    }
-
     @GetMapping("/production")
     public ResponseEntity<?> getType(@RequestParam(required = true) String type){
         return new ResponseEntity<>( carService.checkProduction(type), OK);
